@@ -21,7 +21,7 @@ public class RefundCalculator {
             throw new IllegalArgumentException("Cannot cancel after departure");
         }
         if (days > 30) return 90;
-        if (days > 15) return 50;
+        if (days >= 15) return 50;
         if (days >= 7) return 25;
         return 0;
     }
