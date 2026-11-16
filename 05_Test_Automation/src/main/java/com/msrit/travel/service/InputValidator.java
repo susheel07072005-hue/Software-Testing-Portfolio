@@ -25,7 +25,7 @@ public class InputValidator {
     private static final Pattern PHONE = Pattern.compile("^[6-9]\\d{9}$");
 
     public boolean isValidTravellerCount(int count) {
-        return count >= MIN_TRAVELLERS && count < MAX_TRAVELLERS;
+        return count >= MIN_TRAVELLERS && count <= MAX_TRAVELLERS;
     }
 
     public boolean isValidEmail(String email) {
