@@ -20,7 +20,7 @@ public class PackageSearch {
         String query = destination == null ? "" : destination.trim().toLowerCase(Locale.ROOT);
 
         return packages.stream()
-                .filter(p -> query.isEmpty() || p.getDestination().contains(destination.trim()))
+                .filter(p -> query.isEmpty() || p.getDestination().toLowerCase(Locale.ROOT).contains(query))
                 .filter(p -> maxBudget == null || p.getPricePerAdult().compareTo(maxBudget) <= 0)
                 .filter(p -> minDays == null || p.getDurationDays() >= minDays)
                 .filter(p -> maxDays == null || p.getDurationDays() <= maxDays)
