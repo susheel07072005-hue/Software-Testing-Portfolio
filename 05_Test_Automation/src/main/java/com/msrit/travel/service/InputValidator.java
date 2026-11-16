@@ -53,7 +53,7 @@ public class InputValidator {
         if (travelDate == null || today == null) {
             return false;
         }
-        return !travelDate.isBefore(today)
+        return travelDate.isAfter(today)
                 && !travelDate.isAfter(today.plusDays(MAX_ADVANCE_BOOKING_DAYS));
     }
 }
