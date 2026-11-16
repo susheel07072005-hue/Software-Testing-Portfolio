@@ -1,0 +1,88 @@
+TC ID,Technique,Module,Test Case (input -> expected),Cycle 1 Actual Result (v1.0),Cycle 1 Status,Cycle 2 Status (v2.0 retest),Defect ID
+TC-EP-01,Equivalence Partitioning,Booking,Traveller count 5 (valid class 1-10),As expected,PASS,PASS,-
+TC-EP-02,Equivalence Partitioning,Booking,Traveller count -3 (invalid class < 1),As expected,PASS,PASS,-
+TC-EP-03,Equivalence Partitioning,Booking,Traveller count 15 (invalid class > 10),As expected,PASS,PASS,-
+TC-EP-04,Equivalence Partitioning,Registration,Email shreyas@gmail.com (valid),As expected,PASS,PASS,-
+TC-EP-05,Equivalence Partitioning,Registration,Email without @ (invalid),As expected,PASS,PASS,-
+TC-EP-06,Equivalence Partitioning,Registration,Email without domain extension (invalid),As expected,PASS,PASS,-
+TC-EP-07,Equivalence Partitioning,Registration,Empty email (invalid),As expected,PASS,PASS,-
+TC-EP-08,Equivalence Partitioning,Registration,Null email (invalid),As expected,PASS,PASS,-
+TC-EP-09,Equivalence Partitioning,Registration,Phone 9876543210 (valid),As expected,PASS,PASS,-
+TC-EP-10,Equivalence Partitioning,Registration,Phone starting with 5 (invalid),As expected,PASS,PASS,-
+TC-EP-11,Equivalence Partitioning,Registration,Phone with 5 digits (invalid),As expected,PASS,PASS,-
+TC-EP-12,Equivalence Partitioning,Registration,Phone with letters (invalid),As expected,PASS,PASS,-
+TC-EP-13,Equivalence Partitioning,Registration,Password with letters and digits (valid),As expected,PASS,PASS,-
+TC-EP-14,Equivalence Partitioning,Registration,Password with no digit (invalid),As expected,PASS,PASS,-
+TC-EP-15,Equivalence Partitioning,Registration,Password with no letter (invalid),As expected,PASS,PASS,-
+TC-EP-16,Equivalence Partitioning,Package Search,Search 'Goa' returns both Goa packages,As expected,PASS,PASS,-
+TC-EP-17,Equivalence Partitioning,Package Search,Search 'goa' (lowercase) returns both Goa packages,expected: <2> but was: <0>,FAIL,PASS,DEF-08
+TC-EP-18,Equivalence Partitioning,Package Search,Search 'Paris' (no such package) returns empty list,As expected,PASS,PASS,-
+TC-EP-19,Equivalence Partitioning,Package Search,Negative budget is rejected,As expected,PASS,PASS,-
+TC-EP-20,Equivalence Partitioning,Package Search,Blank destination with budget 8000 returns packages priced <= 8000,As expected,PASS,PASS,-
+TC-BVA-01,Boundary Value Analysis,Booking,Travellers = 0 (min-1),As expected,PASS,PASS,-
+TC-BVA-02,Boundary Value Analysis,Booking,Travellers = 1 (min),As expected,PASS,PASS,-
+TC-BVA-03,Boundary Value Analysis,Booking,Travellers = 2 (min+1),As expected,PASS,PASS,-
+TC-BVA-04,Boundary Value Analysis,Booking,Travellers = 9 (max-1),As expected,PASS,PASS,-
+TC-BVA-05,Boundary Value Analysis,Booking,Travellers = 10 (max),expected: <true> but was: <false>,FAIL,PASS,DEF-06
+TC-BVA-06,Boundary Value Analysis,Booking,Travellers = 11 (max+1),As expected,PASS,PASS,-
+TC-BVA-07,Boundary Value Analysis,Registration,Password length 7 (min-1),As expected,PASS,PASS,-
+TC-BVA-08,Boundary Value Analysis,Registration,Password length 8 (min),As expected,PASS,PASS,-
+TC-BVA-09,Boundary Value Analysis,Registration,Password length 9 (min+1),As expected,PASS,PASS,-
+TC-BVA-10,Boundary Value Analysis,Registration,Password length 15 (max-1),As expected,PASS,PASS,-
+TC-BVA-11,Boundary Value Analysis,Registration,Password length 16 (max),As expected,PASS,PASS,-
+TC-BVA-12,Boundary Value Analysis,Registration,Password length 17 (max+1),As expected,PASS,PASS,-
+TC-BVA-13,Boundary Value Analysis,Pricing & Discounts,Age 1 is INFANT,As expected,PASS,PASS,-
+TC-BVA-14,Boundary Value Analysis,Pricing & Discounts,Age 2 is CHILD,As expected,PASS,PASS,-
+TC-BVA-15,Boundary Value Analysis,Pricing & Discounts,Age 11 is CHILD,As expected,PASS,PASS,-
+TC-BVA-16,Boundary Value Analysis,Pricing & Discounts,Age 12 is ADULT,expected: <ADULT> but was: <CHILD>,FAIL,PASS,DEF-05
+TC-BVA-17,Boundary Value Analysis,Pricing & Discounts,Age 13 is ADULT,As expected,PASS,PASS,-
+TC-BVA-18,Boundary Value Analysis,Pricing & Discounts,Age 59 is ADULT,As expected,PASS,PASS,-
+TC-BVA-19,Boundary Value Analysis,Pricing & Discounts,Age 60 is SENIOR,As expected,PASS,PASS,-
+TC-BVA-20,Boundary Value Analysis,Pricing & Discounts,Age 61 is SENIOR,As expected,PASS,PASS,-
+TC-BVA-21,Boundary Value Analysis,Booking,Travel date = today (min-1),expected: <false> but was: <true>,FAIL,PASS,DEF-07
+TC-BVA-22,Boundary Value Analysis,Booking,Travel date = today+1 (min),As expected,PASS,PASS,-
+TC-BVA-23,Boundary Value Analysis,Booking,Travel date = today+2 (min+1),As expected,PASS,PASS,-
+TC-BVA-24,Boundary Value Analysis,Booking,Travel date = today+364 (max-1),As expected,PASS,PASS,-
+TC-BVA-25,Boundary Value Analysis,Booking,Travel date = today+365 (max),As expected,PASS,PASS,-
+TC-BVA-26,Boundary Value Analysis,Booking,Travel date = today+366 (max+1),As expected,PASS,PASS,-
+TC-BVA-27,Boundary Value Analysis,Cancellation & Refund,Cancel 31 days before departure -> 90%,As expected,PASS,PASS,-
+TC-BVA-28,Boundary Value Analysis,Cancellation & Refund,Cancel 30 days before departure -> 50%,As expected,PASS,PASS,-
+TC-BVA-29,Boundary Value Analysis,Cancellation & Refund,Cancel 16 days before departure -> 50%,As expected,PASS,PASS,-
+TC-BVA-30,Boundary Value Analysis,Cancellation & Refund,Cancel 15 days before departure -> 50%,expected: <50> but was: <25>,FAIL,PASS,DEF-01
+TC-BVA-31,Boundary Value Analysis,Cancellation & Refund,Cancel 14 days before departure -> 25%,As expected,PASS,PASS,-
+TC-BVA-32,Boundary Value Analysis,Cancellation & Refund,Cancel 8 days before departure -> 25%,As expected,PASS,PASS,-
+TC-BVA-33,Boundary Value Analysis,Cancellation & Refund,Cancel 7 days before departure -> 25%,As expected,PASS,PASS,-
+TC-BVA-34,Boundary Value Analysis,Cancellation & Refund,Cancel 6 days before departure -> 0%,As expected,PASS,PASS,-
+TC-BVA-35,Boundary Value Analysis,Cancellation & Refund,Cancel on departure day -> 0%,As expected,PASS,PASS,-
+TC-BVA-36,Boundary Value Analysis,Cancellation & Refund,Cancel 1 day after departure is rejected,As expected,PASS,PASS,-
+TC-DT-01,Decision Table,Pricing & Discounts,"Rule 1 - no group, no early bird, no coupon -> 0%",As expected,PASS,PASS,-
+TC-DT-02,Decision Table,Pricing & Discounts,Rule 2 - coupon only -> 10%,As expected,PASS,PASS,-
+TC-DT-03,Decision Table,Pricing & Discounts,Rule 3 - early bird only -> 5%,As expected,PASS,PASS,-
+TC-DT-04,Decision Table,Pricing & Discounts,Rule 4 - early bird + coupon -> 15%,As expected,PASS,PASS,-
+TC-DT-05,Decision Table,Pricing & Discounts,Rule 5 - group only -> 10%,As expected,PASS,PASS,-
+TC-DT-06,Decision Table,Pricing & Discounts,Rule 6 - group + coupon -> 20%,As expected,PASS,PASS,-
+TC-DT-07,Decision Table,Pricing & Discounts,Rule 7 - group + early bird -> 15%,As expected,PASS,PASS,-
+TC-DT-08,Decision Table,Pricing & Discounts,Rule 8 - all three (25%) capped -> 20%,expected: <20> but was: <25>,FAIL,PASS,DEF-02
+TC-ST-01,State Transition,Booking Lifecycle,New booking starts in CREATED,As expected,PASS,PASS,-
+TC-ST-02,State Transition,Booking Lifecycle,CREATED -> PAYMENT_PENDING on initiatePayment,As expected,PASS,PASS,-
+TC-ST-03,State Transition,Booking Lifecycle,PAYMENT_PENDING -> CONFIRMED on paymentSuccess and seats are reserved,As expected,PASS,PASS,-
+TC-ST-04,State Transition,Booking Lifecycle,PAYMENT_PENDING -> PAYMENT_FAILED on first failure,As expected,PASS,PASS,-
+TC-ST-05,State Transition,Booking Lifecycle,PAYMENT_FAILED -> PAYMENT_PENDING on retry,As expected,PASS,PASS,-
+TC-ST-06,State Transition,Booking Lifecycle,Third payment failure -> EXPIRED,expected: <EXPIRED> but was: <PAYMENT_FAILED>,FAIL,PASS,DEF-04
+TC-ST-07,State Transition,Booking Lifecycle,CONFIRMED -> COMPLETED after the trip,As expected,PASS,PASS,-
+TC-ST-08,State Transition,Booking Lifecycle,CONFIRMED -> CANCELLED releases reserved seats,As expected,PASS,PASS,-
+TC-ST-09,State Transition,Booking Lifecycle,Cancel a COMPLETED booking is rejected,"Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.",FAIL,PASS,DEF-03
+TC-ST-10,State Transition,Booking Lifecycle,paymentSuccess on a CREATED booking is rejected,As expected,PASS,PASS,-
+TC-ST-11,State Transition,Booking Lifecycle,Retry payment on an EXPIRED booking is rejected,"Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.",FAIL,PASS,DEF-04
+TC-ST-12,State Transition,Booking Lifecycle,Complete a CANCELLED booking is rejected,As expected,PASS,PASS,-
+TC-ST-13,State Transition,Booking Lifecycle,PAYMENT_PENDING -> CANCELLED (seats were never reserved),As expected,PASS,PASS,-
+TC-ST-14,State Transition,Booking Lifecycle,PAYMENT_FAILED -> CANCELLED,As expected,PASS,PASS,-
+TC-FN-01,Functional,Pricing & Discounts,"2 adults + 1 child, Rs 5000 package, no discount -> Rs 13125.00 incl. GST",As expected,PASS,PASS,-
+TC-FN-02,Functional,Pricing & Discounts,"Group of 5 (all fare types), early bird + coupon, Rs 10000 package -> Rs 27720.00",expected: <27720.00> but was: <25987.50>,FAIL,PASS,DEF-02
+TC-FN-03,Functional,Pricing & Discounts,Coupon ' tour10 ' (lowercase with spaces) is accepted,As expected,PASS,PASS,-
+TC-FN-04,Functional,Pricing & Discounts,Unknown coupon TOUR50 gives no discount,As expected,PASS,PASS,-
+TC-FN-05,Functional,Booking,Booking 4 travellers when only 3 seats left is rejected,As expected,PASS,PASS,-
+TC-FN-06,Functional,Cancellation & Refund,"Refund on Rs 27720 paid, cancelled 20 days before -> Rs 13860.00",As expected,PASS,PASS,-
+TC-FN-07,Functional,Pricing & Discounts,Negative traveller age is rejected,As expected,PASS,PASS,-
+TC-FN-08,Functional,Booking,Booking with 11 travellers is rejected,As expected,PASS,PASS,-
+TC-FN-09,Functional,Booking,Valid booking gets an ID and the correct amount,As expected,PASS,PASS,-
