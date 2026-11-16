@@ -29,7 +29,7 @@ public class PriceCalculator {
             throw new IllegalArgumentException("Invalid age: " + age);
         }
         if (age < 2) return FareCategory.INFANT;
-        if (age <= 12) return FareCategory.CHILD;
+        if (age < 12) return FareCategory.CHILD;
         if (age < 60) return FareCategory.ADULT;
         return FareCategory.SENIOR;
     }
