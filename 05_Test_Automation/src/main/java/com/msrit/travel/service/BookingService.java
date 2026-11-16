@@ -66,7 +66,7 @@ public class BookingService {
     public void paymentFailure(Booking booking) {
         requireStatus(booking, EnumSet.of(BookingStatus.PAYMENT_PENDING), "record payment failure");
         booking.incrementFailedPaymentAttempts();
-        if (booking.getFailedPaymentAttempts() > MAX_PAYMENT_ATTEMPTS) {
+        if (booking.getFailedPaymentAttempts() >= MAX_PAYMENT_ATTEMPTS) {
             booking.setStatus(BookingStatus.EXPIRED);
         } else {
             booking.setStatus(BookingStatus.PAYMENT_FAILED);
