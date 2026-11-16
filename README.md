@@ -7,7 +7,7 @@
 | Name | USN | Role |
 |---|---|---|
 | Shreyas | 1MS23IS118 | Test Automation (JUnit) & Defect Reporting |
-| Susheel Kumar Naik S | 1MS23IS132 | Test Plan & Documentation Test Case Design (Decision Table, State Transition)|
+| Susheel Kumar Naik S | 1MS23IS132 | Test Plan & Documentation, Test Case Design (Decision Table, State Transition) |
 | Shrajan Prabhu | 1MS23IS116 | Test Case Design (EP, BVA) |
 
 - **Subject:** Software Testing (Other Component)
