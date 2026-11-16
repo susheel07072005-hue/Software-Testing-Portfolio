@@ -6,15 +6,14 @@
 
 | Name | USN | Role |
 |---|---|---|
-| Shreyas | 1MS23IS118 | Test Automation (JUnit) |
-| _<Member 2>_ | _<USN>_ | Test Plan & Documentation |
-| _<Member 3>_ | _<USN>_ | Test Case Design (EP, BVA) |
-| _<Member 4>_ | _<USN>_ | Test Case Design (Decision Table, State Transition) & Defect Reporting |
+| Shreyas | 1MS23IS118 | Test Automation (JUnit) & Defect Reporting |
+| Susheel Kumar Naik S | 1MS23IS132 | Test Plan & Documentation Test Case Design (Decision Table, State Transition)|
+| Shrajan Prabhu | 1MS23IS116 | Test Case Design (EP, BVA) |
 
 - **Subject:** Software Testing (Other Component)
 - **Department:** Information Science and Engineering, M S Ramaiah Institute of Technology, Bengaluru
 - **Semester / Section:** 7th Semester, Section B
-- **Faculty:** _<Faculty name>_
+- **Faculty:** Dr. Pushpalatha M. N.
 
 ## Objectives
 
