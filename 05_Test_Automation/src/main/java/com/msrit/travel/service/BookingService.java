@@ -74,9 +74,7 @@ public class BookingService {
     }
 
     public void cancel(Booking booking) {
-        if (booking.getStatus() == BookingStatus.CANCELLED) {
-            throw new IllegalStateException("Booking already cancelled");
-        }
+        requireStatus(booking, CANCELLABLE, "cancel");
         if (booking.getStatus() == BookingStatus.CONFIRMED) {
             booking.getTourPackage().releaseSeats(booking.getTravellerCount());
         }
