@@ -48,7 +48,7 @@ public class PriceCalculator {
         if (travellerCount >= GROUP_SIZE) discount += 10;
         if (daysInAdvance >= EARLY_BIRD_DAYS) discount += 5;
         if (coupon != null && VALID_COUPON.equalsIgnoreCase(coupon.trim())) discount += 10;
-        return discount;
+        return Math.min(discount, MAX_DISCOUNT_PERCENT);
     }
 
     public BigDecimal totalPrice(BigDecimal adultPrice, List<Integer> ages,
